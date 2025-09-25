@@ -11,11 +11,11 @@ import financialAnalysisImage from "@/assets/financial-analysis.jpg";
 const Work = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
 
-  const filters = ["ML Engineer", "Software Engineer", "Data Analytics"];
+  const filters = ["ML Engineer", "Software Engineer", "Data Analytics", "Computer Engineering"];
 
   const projects = [
     {
-      title: "AI-Powered Recommendation System",
+      title: "Resume Optimization Platform",
       description: "Built a machine learning system that provides personalized recommendations using collaborative filtering and deep learning techniques.",
       tags: ["Python", "TensorFlow", "PostgreSQL", "Docker"],
       categories: ["ML Engineer", "Data Analytics"],
@@ -24,16 +24,15 @@ const Work = () => {
       imageUrl: aiDashboardImage
     },
     {
-      title: "Real-time Analytics Dashboard",
-      description: "Developed a comprehensive dashboard for real-time data visualization and analytics using React and D3.js.",
-      tags: ["React", "D3.js", "Node.js", "MongoDB"],
-      categories: ["Software Engineer", "Data Analytics"],
-      githubUrl: "https://github.com/jishnusanyal/analytics-dashboard",
-      liveUrl: "https://analytics-demo.example.com",
+      title: "Legal Voice Assistant",
+      description: "Voice-enabled Legal RAG Assistant that answers legal questions based on provided documents using FastAPI, vector database, and local AI models.",
+      tags: ["Python", "FastAPI", "Ollama", "Whisper", "Vector DB"],
+      categories: ["Software Engineer", "ML Engineer"],
+      githubUrl: "https://github.com/JishyFishy2006/LegalAssitant.git",
       imageUrl: analyticsDashboardImage
     },
     {
-      title: "Natural Language Processing API",
+      title: "Recreation of Vision Transformer",
       description: "Created a REST API for text analysis including sentiment analysis, entity recognition, and text classification.",
       tags: ["Python", "Flask", "NLTK", "spaCy", "Docker"],
       categories: ["ML Engineer", "Software Engineer"],
@@ -41,7 +40,7 @@ const Work = () => {
       imageUrl: nlpApiImage
     },
     {
-      title: "Data Pipeline Automation",
+      title: "Recreation & Benchmarking of VLAT",
       description: "Designed and implemented automated ETL pipelines for processing large-scale data using Apache Airflow and Spark.",
       tags: ["Apache Spark", "Airflow", "Python", "AWS"],
       categories: ["Data Analytics", "Software Engineer"],
@@ -49,13 +48,36 @@ const Work = () => {
       imageUrl: dataPipelineImage
     },
     {
-      title: "Computer Vision Object Detection",
+      title: "FoodVision Mini App",
       description: "Developed a real-time object detection system using YOLO and OpenCV for industrial quality control.",
       tags: ["Python", "OpenCV", "YOLO", "PyTorch"],
       categories: ["ML Engineer"],
       githubUrl: "https://github.com/jishnusanyal/object-detection",
       liveUrl: "https://cv-demo.example.com",
       imageUrl: objectDetectionImage
+    },
+    {
+      title: "Song Classification",
+      description: "Machine learning model for music genre classification using audio features. Achieved 78% accuracy with gradient boosting and hyperparameter optimization.",
+      tags: ["Python", "Machine Learning", "Audio Processing", "Gradient Boosting"],
+      categories: ["ML Engineer", "Data Analytics"],
+      githubUrl: "https://github.com/ReehalS/TeamTBD_SongClassifier",
+      liveUrl: "https://songclassifiers.streamlit.app"
+    },
+    // CE-only projects (hidden by default, visible only when 'Computer Engineering' is selected)
+    {
+      title: "Quantum Computing w PennyLane",
+      description: "Implemented quantum circuits and variational algorithms using PennyLane; explored hybrid quantum-classical workflows.",
+      tags: ["PennyLane", "Quantum", "Python"],
+      categories: ["Computer Engineering"],
+      githubUrl: "https://github.com/jishnusanyal/quantum-pennylane"
+    },
+    {
+      title: "Audio Sampler",
+      description: "Built a browser-based audio sampling tool with waveform visualization, slicing, and basic effects.",
+      tags: ["TypeScript", "Web Audio API", "React"],
+      categories: ["Computer Engineering"],
+      githubUrl: "https://github.com/jishnusanyal/audio-sampler"
     },
     {
       title: "Financial Data Analysis Platform",
@@ -75,11 +97,20 @@ const Work = () => {
     }
   };
 
-  const filteredProjects = selectedFilters.length === 0 
-    ? projects 
-    : projects.filter(project => 
-        project.categories.some(category => selectedFilters.includes(category))
-      );
+  const isComputerEngineeringSelected = selectedFilters.includes("Computer Engineering");
+  const filteredProjects = projects.filter(project => {
+    const isCEProject = project.categories.includes("Computer Engineering");
+    // Hide CE-only projects unless the CE filter is selected
+    if (isCEProject && !isComputerEngineeringSelected) {
+      return false;
+    }
+    // If no filters selected, show everything else
+    if (selectedFilters.length === 0) {
+      return true;
+    }
+    // Otherwise, filter by selected categories
+    return project.categories.some(category => selectedFilters.includes(category));
+  });
 
   console.log("Work component rendering");
   console.log("filteredProjects:", filteredProjects);
