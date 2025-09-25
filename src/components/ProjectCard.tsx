@@ -15,9 +15,9 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ title, description, tags, categories, githubUrl, liveUrl, imageUrl }: ProjectCardProps) => {
   return (
-    <Card className="group bg-surface-elevated border-border hover:border-hero-primary/30 transition-all duration-300 hover:shadow-card hover:shadow-hero-primary/10 overflow-hidden">
+    <Card className="group bg-card border-border hover:border-primary/30 transition-all duration-300 hover:shadow-lg overflow-hidden">
       {imageUrl && (
-        <div className="aspect-video overflow-hidden bg-surface-glass">
+        <div className="aspect-video overflow-hidden bg-muted/20">
           <img
             src={imageUrl}
             alt={title}
@@ -32,18 +32,18 @@ const ProjectCard = ({ title, description, tags, categories, githubUrl, liveUrl,
             <Badge
               key={category}
               variant="outline"
-              className="text-xs border-hero-primary/30 text-hero-primary"
+              className="text-xs border-primary/30 text-primary"
             >
               {category}
             </Badge>
           ))}
         </div>
         
-        <CardTitle className="text-text-primary group-hover:text-hero-primary transition-colors">
+        <CardTitle className="text-foreground group-hover:text-primary transition-colors">
           {title}
         </CardTitle>
         
-        <CardDescription className="text-text-secondary">
+        <CardDescription className="text-muted-foreground">
           {description}
         </CardDescription>
       </CardHeader>
@@ -51,7 +51,7 @@ const ProjectCard = ({ title, description, tags, categories, githubUrl, liveUrl,
       <CardContent>
         <div className="flex flex-wrap gap-2">
           {tags.map((tag) => (
-            <Badge key={tag} variant="secondary" className="text-xs bg-surface-glass">
+            <Badge key={tag} variant="secondary" className="text-xs bg-muted/40">
               {tag}
             </Badge>
           ))}
@@ -64,7 +64,7 @@ const ProjectCard = ({ title, description, tags, categories, githubUrl, liveUrl,
             variant="outline"
             size="sm"
             asChild
-            className="flex-1 border-border hover:border-hero-primary/50"
+            className="flex-1 border-border hover:border-primary/50"
           >
             <a href={githubUrl} target="_blank" rel="noopener noreferrer">
               <Github className="w-4 h-4 mr-2" />
@@ -77,7 +77,7 @@ const ProjectCard = ({ title, description, tags, categories, githubUrl, liveUrl,
           <Button
             size="sm"
             asChild
-            className="flex-1 bg-gradient-primary hover:opacity-90"
+            className="flex-1 bg-primary text-primary-foreground hover:opacity-90"
           >
             <a href={liveUrl} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="w-4 h-4 mr-2" />

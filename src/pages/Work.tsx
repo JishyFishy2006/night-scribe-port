@@ -81,15 +81,19 @@ const Work = () => {
         project.categories.some(category => selectedFilters.includes(category))
       );
 
+  console.log("Work component rendering");
+  console.log("filteredProjects:", filteredProjects);
+  console.log("selectedFilters:", selectedFilters);
+
   return (
     <div className="min-h-screen pt-24 pb-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16 animate-fade-in-up">
-          <h1 className="text-4xl sm:text-5xl font-bold text-text-primary mb-4">
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl font-bold text-foreground mb-4">
             Projects & Work
           </h1>
-          <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
             A collection of projects showcasing my expertise in machine learning, 
             software engineering, and data analytics.
           </p>
@@ -97,7 +101,7 @@ const Work = () => {
 
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Filter Panel */}
-          <div className="lg:w-1/4 animate-fade-in" style={{animationDelay: "0.2s"}}>
+          <div className="lg:w-1/4">
             <div className="sticky top-24">
               <FilterPanel
                 filters={filters}
@@ -109,21 +113,17 @@ const Work = () => {
 
           {/* Projects Grid */}
           <div className="lg:w-3/4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 animate-fade-in" style={{animationDelay: "0.4s"}}>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {filteredProjects.map((project, index) => (
-                <div
-                  key={project.title}
-                  className="animate-scale-in"
-                  style={{animationDelay: `${0.1 * index}s`}}
-                >
+                <div key={project.title}>
                   <ProjectCard {...project} />
                 </div>
               ))}
             </div>
 
             {filteredProjects.length === 0 && (
-              <div className="text-center py-16 animate-fade-in">
-                <p className="text-text-muted text-lg">
+              <div className="text-center py-16">
+                <p className="text-muted-foreground text-lg">
                   No projects found for the selected filters.
                 </p>
               </div>
