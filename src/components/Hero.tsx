@@ -1,11 +1,15 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, ChevronDown } from "lucide-react";
+import AnimatedBackground from "./AnimatedBackground";
 
 const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
+      {/* 3D Animated Background */}
+      <AnimatedBackground />
+      
+      {/* Static Background Elements */}
       <div className="absolute inset-0 bg-background">
         <div className="absolute inset-0 bg-gradient-to-br from-hero-primary/10 to-hero-secondary/10"></div>
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-hero-primary/5 rounded-full blur-3xl animate-float"></div>

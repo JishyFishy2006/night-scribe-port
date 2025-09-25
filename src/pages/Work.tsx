@@ -1,6 +1,12 @@
 import { useState } from "react";
 import ProjectCard from "@/components/ProjectCard";
 import FilterPanel from "@/components/FilterPanel";
+import aiDashboardImage from "@/assets/ai-dashboard.jpg";
+import analyticsDashboardImage from "@/assets/analytics-dashboard.jpg";
+import nlpApiImage from "@/assets/nlp-api.jpg";
+import dataPipelineImage from "@/assets/data-pipeline.jpg";
+import objectDetectionImage from "@/assets/object-detection.jpg";
+import financialAnalysisImage from "@/assets/financial-analysis.jpg";
 
 const Work = () => {
   const [selectedFilters, setSelectedFilters] = useState<string[]>([]);
@@ -14,7 +20,8 @@ const Work = () => {
       tags: ["Python", "TensorFlow", "PostgreSQL", "Docker"],
       categories: ["ML Engineer", "Data Analytics"],
       githubUrl: "https://github.com/jishnusanyal/ml-recommender",
-      liveUrl: "https://recommender-demo.example.com"
+      liveUrl: "https://recommender-demo.example.com",
+      imageUrl: aiDashboardImage
     },
     {
       title: "Real-time Analytics Dashboard",
@@ -22,21 +29,24 @@ const Work = () => {
       tags: ["React", "D3.js", "Node.js", "MongoDB"],
       categories: ["Software Engineer", "Data Analytics"],
       githubUrl: "https://github.com/jishnusanyal/analytics-dashboard",
-      liveUrl: "https://analytics-demo.example.com"
+      liveUrl: "https://analytics-demo.example.com",
+      imageUrl: analyticsDashboardImage
     },
     {
       title: "Natural Language Processing API",
       description: "Created a REST API for text analysis including sentiment analysis, entity recognition, and text classification.",
       tags: ["Python", "Flask", "NLTK", "spaCy", "Docker"],
       categories: ["ML Engineer", "Software Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/nlp-api"
+      githubUrl: "https://github.com/jishnusanyal/nlp-api",
+      imageUrl: nlpApiImage
     },
     {
       title: "Data Pipeline Automation",
       description: "Designed and implemented automated ETL pipelines for processing large-scale data using Apache Airflow and Spark.",
       tags: ["Apache Spark", "Airflow", "Python", "AWS"],
       categories: ["Data Analytics", "Software Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/data-pipeline"
+      githubUrl: "https://github.com/jishnusanyal/data-pipeline",
+      imageUrl: dataPipelineImage
     },
     {
       title: "Computer Vision Object Detection",
@@ -44,14 +54,16 @@ const Work = () => {
       tags: ["Python", "OpenCV", "YOLO", "PyTorch"],
       categories: ["ML Engineer"],
       githubUrl: "https://github.com/jishnusanyal/object-detection",
-      liveUrl: "https://cv-demo.example.com"
+      liveUrl: "https://cv-demo.example.com",
+      imageUrl: objectDetectionImage
     },
     {
       title: "Financial Data Analysis Platform",
       description: "Built a comprehensive platform for financial data analysis with predictive modeling and risk assessment.",
       tags: ["Python", "Pandas", "Scikit-learn", "React", "PostgreSQL"],
       categories: ["Data Analytics", "Software Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/fintech-analytics"
+      githubUrl: "https://github.com/jishnusanyal/fintech-analytics",
+      imageUrl: financialAnalysisImage
     }
   ];
 
