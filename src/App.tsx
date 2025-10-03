@@ -16,7 +16,7 @@ const App = () => (
     <TooltipProvider>
       <Toaster />
       <Sonner />
-      <BrowserRouter>
+      <BrowserRouter basename="/night-scribe-port">
         <div className="min-h-screen bg-background text-foreground">
           <Navbar />
           <Routes>
