@@ -15,15 +15,6 @@ const Work = () => {
 
   const projects = [
     {
-      title: "Resume Optimization Platform",
-      description: "Built a machine learning system that provides personalized recommendations using collaborative filtering and deep learning techniques.",
-      tags: ["Python", "TensorFlow", "PostgreSQL", "Docker"],
-      categories: ["ML Engineer", "Data Analytics"],
-      githubUrl: "https://github.com/jishnusanyal/ml-recommender",
-      liveUrl: "https://recommender-demo.example.com",
-      imageUrl: aiDashboardImage
-    },
-    {
       title: "Legal Voice Assistant",
       description: "Voice-enabled Legal RAG Assistant that answers legal questions based on provided documents using FastAPI, vector database, and local AI models.",
       tags: ["Python", "FastAPI", "Ollama", "Whisper", "Vector DB"],
@@ -32,36 +23,19 @@ const Work = () => {
       imageUrl: analyticsDashboardImage
     },
     {
-      title: "Recreation of Vision Transformer",
-      description: "Created a REST API for text analysis including sentiment analysis, entity recognition, and text classification.",
-      tags: ["Python", "Flask", "NLTK", "spaCy", "Docker"],
+      title: "Papers2Practice",
+      description: "Converting ML research papers to working code on customized datasets. Implemented Vision Transformer (ViT) and Vision-Language-Action Transformer (VLAT) architectures with comprehensive benchmarking.",
+      tags: ["Python", "PyTorch", "Transformers", "Computer Vision", "Research"],
       categories: ["ML Engineer", "Software Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/nlp-api",
+      githubUrl: "https://github.com/JishyFishy2006/Papers2Practice.git",
       imageUrl: nlpApiImage
-    },
-    {
-      title: "Recreation & Benchmarking of VLAT",
-      description: "Designed and implemented automated ETL pipelines for processing large-scale data using Apache Airflow and Spark.",
-      tags: ["Apache Spark", "Airflow", "Python", "AWS"],
-      categories: ["Data Analytics", "Software Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/data-pipeline",
-      imageUrl: dataPipelineImage
-    },
-    {
-      title: "FoodVision Mini App",
-      description: "Developed a real-time object detection system using YOLO and OpenCV for industrial quality control.",
-      tags: ["Python", "OpenCV", "YOLO", "PyTorch"],
-      categories: ["ML Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/object-detection",
-      liveUrl: "https://cv-demo.example.com",
-      imageUrl: objectDetectionImage
     },
     {
       title: "Song Classification",
       description: "Machine learning model for music genre classification using audio features. Achieved 78% accuracy with gradient boosting and hyperparameter optimization.",
       tags: ["Python", "Machine Learning", "Audio Processing", "Gradient Boosting"],
       categories: ["ML Engineer", "Data Analytics"],
-      githubUrl: "https://github.com/ReehalS/TeamTBD_SongClassifier",
+      githubUrl: "https://github.com/ReehalS/TeamTBD_SongClassifier.git",
       liveUrl: "https://songclassifiers.streamlit.app"
     },
     // CE-only projects (hidden by default, visible only when 'Computer Engineering' is selected)
@@ -70,22 +44,22 @@ const Work = () => {
       description: "Implemented quantum circuits and variational algorithms using PennyLane; explored hybrid quantum-classical workflows.",
       tags: ["PennyLane", "Quantum", "Python"],
       categories: ["Computer Engineering"],
-      githubUrl: "https://github.com/jishnusanyal/quantum-pennylane"
+      githubUrl: "https://colab.research.google.com/drive/1SOqA01RC7SLOFYMrRTslTYsNULMfe8UV?usp=sharing"
     },
     {
       title: "Audio Sampler",
       description: "Built a browser-based audio sampling tool with waveform visualization, slicing, and basic effects.",
       tags: ["TypeScript", "Web Audio API", "React"],
       categories: ["Computer Engineering"],
-      githubUrl: "https://github.com/jishnusanyal/audio-sampler"
+      githubUrl: "https://drive.google.com/drive/folders/1QLcf07Fzcev-SHyB88C_EEDeKgLi4whY?usp=sharing"
     },
     {
-      title: "Financial Data Analysis Platform",
-      description: "Built a comprehensive platform for financial data analysis with predictive modeling and risk assessment.",
-      tags: ["Python", "Pandas", "Scikit-learn", "React", "PostgreSQL"],
-      categories: ["Data Analytics", "Software Engineer"],
-      githubUrl: "https://github.com/jishnusanyal/fintech-analytics",
-      imageUrl: financialAnalysisImage
+      title: "Resume Optimization Platform",
+      description: "Building a machine learning system that provides personalized resume recommendations using collaborative filtering and deep learning techniques. {In Progress Project}",
+      tags: ["Python", "TensorFlow", "PostgreSQL", "Docker"],
+      categories: ["ML Engineer", "Data Analytics"],
+      githubUrl: "https://github.com/JishyFishy2006/ResumeOptimizer.git",
+      imageUrl: aiDashboardImage
     }
   ];
 
